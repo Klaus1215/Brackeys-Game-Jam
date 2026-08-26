@@ -1,11 +1,10 @@
 extends Node
 
+@export var spawn_jogador = Vector2(292, 311)
 
 func _ready() -> void:
-	# Por meio do estado do jogador, renderizará sua barra de vida
-	var vida_jogador = EstadoDoJogo.estado_do_jogador["vida"]
-	
-	
+	# Por meio do estado do jogador, renderizará ele
+	var jogador_instanciado = EstadoDoJogo.instanciar_jogador()
 	
 	# Por meio dos dados de Party do global, renderizará os companheiros no combate
 	var party_instanciada = Party.instanciar_party()
