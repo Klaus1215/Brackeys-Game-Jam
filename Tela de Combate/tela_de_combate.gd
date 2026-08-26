@@ -1,0 +1,20 @@
+extends Node
+
+
+func _ready() -> void:
+	# Por meio do estado do jogador, renderizará sua barra de vida
+	var vida_jogador = EstadoDoJogo.estado_do_jogador["vida"]
+	
+	
+	
+	# Por meio dos dados de Party do global, renderizará os companheiros no combate
+	var party_instanciada = Party.instanciar_party()
+	var spawn_companheiro = Vector2(100, 100)
+	
+	for personagem in party_instanciada:
+		personagem.position = spawn_companheiro
+		add_child(personagem)
+		spawn_companheiro.y += 110
+		
+	
+	

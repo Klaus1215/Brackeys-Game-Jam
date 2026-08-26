@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://6iy4bu04xncd"]
+
+[ext_resource type="Script" uid="uid://ca3u3qor2bcg3" path="res://Tela de Combate/tela_de_combate.gd" id="1_p3a4r"]
+[ext_resource type="Texture2D" uid="uid://4uys5dq83uom" path="res://icon.png" id="2_vqf3k"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7xlsb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_vqf3k")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Tela de Combate" type="Node" unique_id=598384138]
+script = ExtResource("1_p3a4r")
+
+[node name="Node2D" type="Node2D" parent="." unique_id=952019441]
+position = Vector2(292, 311)
+metadata/_edit_group_ = true
+
+[node name="Sprite do Jogador" type="AnimatedSprite2D" parent="Node2D" unique_id=813593306]
+position = Vector2(-1, 0)
+sprite_frames = SubResource("SpriteFrames_7xlsb")
+
+[node name="Marker2D" type="Marker2D" parent="Node2D" unique_id=1261895720]
+
+[node name="Party" type="Node2D" parent="." unique_id=1683803422]
+position = Vector2(340, 310)
+
+[node name="Inimigos" type="Node2D" parent="." unique_id=1347845053]
+position = Vector2(340, 309)
+
+[node name="Interface do Comabte" type="CanvasLayer" parent="." unique_id=1451573465]
