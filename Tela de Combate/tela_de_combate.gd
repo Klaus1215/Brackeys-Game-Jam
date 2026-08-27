@@ -3,10 +3,10 @@ extends Node
 @export var spawn_jogador = Vector2(292, 311)
 
 var espaco_party : Node2D
+var espaco_inimigos : Node2D
 
 func _ready() -> void:
 	# Por meio do estado do jogador, renderizará ele
-	
 	var jogador_instanciado = EstadoDoJogo.instanciar_jogador()
 	print("Vida da instancia:", jogador_instanciado.vida_atual)
 	jogador_instanciado.position = Vector2(292, 311)
@@ -22,5 +22,10 @@ func _ready() -> void:
 		add_child(personagem)
 		spawn_companheiro.y += 110
 		
+	# Spawna os inimigos por meio do nó Inimigos
+	espaco_inimigos = get_node_or_null("Inimigos")
+	
+	if(espaco_inimigos):
+		espaco_inimigos.spawn_teste()
 	
 	

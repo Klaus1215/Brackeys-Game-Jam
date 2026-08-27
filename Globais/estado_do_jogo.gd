@@ -16,6 +16,7 @@ var JogadorStats: Dictionary = {
 
 func resetar_jogo() -> void:
 	dia = DIA_INICIAL
+	momento_dia = Horarios.Manhã
 	JogadorStats["vida"] = VIDA_INICIAL
 
 func instanciar_jogador() -> Personagem:

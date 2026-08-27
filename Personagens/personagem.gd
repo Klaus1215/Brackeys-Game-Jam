@@ -2,10 +2,10 @@ extends Node
 class_name Personagem
 
 @export var vida_total: int
+var vida_atual : int
 @export var ataque_base : int
 var e_jogador : bool = false
 
-var vida_atual : int
 var vida_anterior : int
 
 signal vida_modificou
