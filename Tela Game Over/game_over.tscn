@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://cacot85jgnvuj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ylgm4"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="Game Over" type="Control" unique_id=2054618288]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Game Over Label" type="Label" parent="." unique_id=1299124360]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxFlat_ylgm4")
+text = "Brutal, não sobrou nada"
+horizontal_alignment = 1
+vertical_alignment = 1

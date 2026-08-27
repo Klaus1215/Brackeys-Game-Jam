@@ -25,23 +25,24 @@ sprite_frames = SubResource("SpriteFrames_7xlsb")
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=504161952]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=872327142]
+[node name="Barra de Vida" type="TextureProgressBar" parent="." unique_id=608620145]
 visible = false
-
-[node name="Barra de Vida" type="TextureProgressBar" parent="CanvasLayer" unique_id=608620145]
 anchors_preset = -1
-anchor_top = -0.08800001
-anchor_bottom = -0.08800001
-offset_left = -68.00001
-offset_top = -8.975994
+anchor_left = 0.521
+anchor_top = 0.49100003
+anchor_right = 0.521
+anchor_bottom = 0.49100003
+offset_left = -68.0
+offset_top = -74.0
 offset_right = 390.0
-offset_bottom = 56.024006
+offset_bottom = -9.0
 scale = Vector2(0.3, 0.3)
 size_flags_horizontal = 4
 size_flags_vertical = 0
+value = 100.0
 texture_under = ExtResource("3_bu4fp")
 texture_progress = ExtResource("4_vv7k6")
 script = ExtResource("5_vv7k6")
 metadata/_edit_use_anchors_ = true
 
-[connection signal="vida_modificou" from="." to="CanvasLayer/Barra de Vida" method="_on_personagem_vida_modificou"]
+[connection signal="vida_modificou" from="." to="Barra de Vida" method="_on_personagem_vida_modificou"]

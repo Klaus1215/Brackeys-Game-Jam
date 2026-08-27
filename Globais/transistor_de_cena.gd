@@ -22,3 +22,8 @@ func _deferred_goto_scene(path):
 	get_tree().root.add_child(current_scene)
 
 	get_tree().current_scene = current_scene
+	
+func game_over():
+	goto_scene("res://Tela Game Over/game_over.tscn")
+	Party.resetar_party()
+	

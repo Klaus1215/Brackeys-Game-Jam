@@ -13,8 +13,9 @@ signal vida_modificou
 func _ready() -> void:
 	vida_anterior = vida_atual
 	
+	print(e_jogador)
 	if(e_jogador):
-		var barra_vida = get_node("CanvasLayer")
+		var barra_vida = get_node("Barra de Vida")
 		barra_vida.visible = true
 
 # Ataque básico que inimigos e companheiros podem fazer
@@ -29,4 +30,8 @@ func _process(delta: float) -> void:
 	if(vida_anterior != vida_atual):
 		vida_anterior = vida_atual
 		vida_modificou.emit()
+	
+	if(e_jogador && vida_atual <= 0):
+		print("Jogador morreu")
+		TransistorDeCena.game_over()
 	

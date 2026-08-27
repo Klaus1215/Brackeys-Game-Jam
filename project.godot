@@ -8,10 +8,14 @@
 
 config_version=5
 
+[animation]
+
+compatibility/default_parent_skeleton_in_mesh_instance_3d=true
+
 [application]
 
 config/name="Brackeys- Game- Jam"
-run/main_scene="uid://o6od2wjndy5g"
+run/main_scene="res://Tela Hub/hud_jogo.tscn"
 config/features=PackedStringArray("4.7")
 config/icon="res://icon.png"
 
@@ -20,6 +24,10 @@ config/icon="res://icon.png"
 EstadoDoJogo="*uid://c3kivgk1dwypm"
 TransistorDeCena="*uid://c6vfs2fs7hxlc"
 Party="*uid://c5tl8ctg0tmwj"
+
+[dotnet]
+
+project/assembly_name="Brackeys- Game- Jam"
 
 [gui]
 

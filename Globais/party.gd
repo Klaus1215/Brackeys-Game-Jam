@@ -24,16 +24,18 @@ func get_party() -> Array:
 func print_party() -> void:
 	print(party)
 
+func resetar_party() -> void:
+	party.clear()
+
 # Método para renderizar a party
 func instanciar_party() -> Array:
 	var partyInstanciada : Array[Personagem]
 	
 	for personagem in party:
 		var personagem_instan = personagem["tipo"].instantiate()
-		personagem_instan.vida = personagem["vida"]
+		personagem_instan.vida_total = personagem["vida"]
 		personagem_instan.ataque_base = personagem["ataque_base"]
 		partyInstanciada.append(personagem_instan)
 	
 	return partyInstanciada
 		
-	
