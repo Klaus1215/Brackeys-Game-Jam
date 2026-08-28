@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://7jdnwt0e0j" path="res://Tela Hub/hud_jogo.gd" id="1_tdsj0"]
 
+[sub_resource type="DrawableTexture2D" id="DrawableTexture2D_7b3xh"]
+
 [node name="HUD_Jogo" type="Control" unique_id=1302963485]
 layout_mode = 3
 anchors_preset = 15
@@ -11,49 +13,76 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_tdsj0")
 
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1036457639]
+modulate = Color(0.9968409, 0.78881043, 1, 1)
+position = Vector2(1170, 540)
+scale = Vector2(36.5625, 16.875)
+texture = SubResource("DrawableTexture2D_7b3xh")
+
 [node name="Conatiner Dias" type="PanelContainer" parent="." unique_id=2054105956]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.5
-anchor_top = 0.485
-anchor_right = 0.5
-anchor_bottom = 0.485
-offset_left = 15.0
-offset_top = -314.28
-offset_right = 575.0
-offset_bottom = -207.28
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -638.0
+offset_top = 37.0
+offset_right = -78.0
+offset_bottom = 144.0
+grow_horizontal = 0
 
 [node name="Label Dias" type="Label" parent="Conatiner Dias" unique_id=1096602646]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "Dia 0 - Manhã"
+horizontal_alignment = 1
 
 [node name="Summon" type="Button" parent="." unique_id=12526599]
-layout_mode = 0
-offset_left = 736.0
-offset_top = 316.0
-offset_right = 1127.0
-offset_bottom = 416.0
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -637.0
+offset_top = -520.0
+offset_right = -89.6001
+offset_bottom = -380.0
+grow_horizontal = 0
+grow_vertical = 0
 theme_override_font_sizes/font_size = 40
-text = "Sumonar"
+text = "Summon"
 
 [node name="Lutar" type="Button" parent="." unique_id=2100512929]
-layout_mode = 0
-offset_left = 736.0
-offset_top = 426.0
-offset_right = 1127.0
-offset_bottom = 526.0
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -639.0
+offset_top = -372.0
+offset_right = -91.6001
+offset_bottom = -232.0
+grow_horizontal = 0
+grow_vertical = 0
 theme_override_font_sizes/font_size = 40
-text = "Lutar"
+text = "Interact"
 
 [node name="Button" type="Button" parent="." unique_id=193536195]
-layout_mode = 0
-offset_left = 735.0
-offset_top = 536.0
-offset_right = 1126.0
-offset_bottom = 636.0
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -639.0
+offset_top = -228.0
+offset_right = -91.59961
+offset_bottom = -88.0
+grow_horizontal = 0
+grow_vertical = 0
 theme_override_font_sizes/font_size = 40
-text = "Terminar dia"
+text = "End Day"
 
 [connection signal="pressed" from="Summon" to="." method="_on_summon_pressed"]
 [connection signal="pressed" from="Lutar" to="." method="_on_lutar_pressed"]
