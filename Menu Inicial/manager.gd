@@ -17,4 +17,4 @@ func _on_exit_pressed() -> void:
 	get_tree().quit()
 
 func _on_credits_pressed() -> void:
-	TransistorDeCena.goto_scene("res://Misc_Scenes/Credits.tscn")
+	TransistorDeCena.goto_scene("res://Misc Scenes/Credits.tscn")

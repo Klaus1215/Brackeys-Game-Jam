@@ -1,3 +1,32 @@
 [gd_scene format=3 uid="uid://dsh84ycn75qrb"]
 
+[sub_resource type="DrawableTexture2D" id="DrawableTexture2D_vvbxd"]
+resource_local_to_scene = true
+resource_name = "That time i got reincarnated as a villain"
+
 [node name="Credits" type="Node2D" unique_id=2129217315]
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1943358478]
+modulate = Color(1, 0.87058824, 1, 1)
+position = Vector2(1170, 540.00006)
+scale = Vector2(36.5625, 16.875002)
+texture = SubResource("DrawableTexture2D_vvbxd")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=446948958]
+offset_left = 310.0
+offset_top = 103.0
+offset_right = 1215.0
+offset_bottom = 914.0
+theme_override_colors/default_color = Color(0.056291588, 0.056291603, 0.056291595, 1)
+theme_override_font_sizes/normal_font_size = 36
+text = "Arteira:
+Fernanda Lacoste
+
+Um cara aí:
+HibouEterno
+
+Garoto de Programa:
+Thiago
+
+Historiadeira:
+Dirigindo meu carro BIBI"
