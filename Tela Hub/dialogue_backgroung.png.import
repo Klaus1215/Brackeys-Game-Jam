@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bk75tk5bll33c"
-path="res://.godot/imported/OverBarPlaceholder.png-b0ce4966a32bf946c17e6108650c86f1.ctex"
+uid="uid://d2kphho5pstyd"
+path="res://.godot/imported/dialogue_backgroung.png-ace4b33e0483b788ff5cd93293fd620d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/OverBarPlaceholder.png"
-dest_files=["res://.godot/imported/OverBarPlaceholder.png-b0ce4966a32bf946c17e6108650c86f1.ctex"]
+source_file="res://Tela Hub/dialogue_backgroung.png"
+dest_files=["res://.godot/imported/dialogue_backgroung.png-ace4b33e0483b788ff5cd93293fd620d.ctex"]
 
 [params]
 
