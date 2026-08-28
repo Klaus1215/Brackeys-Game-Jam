@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://drv5guf51m4tg"]
+
+[ext_resource type="Script" uid="uid://bhsb8gw01xktn" path="res://Menu Inicial/manager.gd" id="1_fmgav"]
+
+[sub_resource type="DrawableTexture2D" id="DrawableTexture2D_ewgvm"]
+resource_local_to_scene = true
+resource_name = "That time i got reincarnated as a villain"
+
+[node name="Menu" type="Node2D" unique_id=838844444]
+
+[node name="LocalSceneManager" type="Node" parent="." unique_id=746265277]
+script = ExtResource("1_fmgav")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1712904093]
+modulate = Color(1, 0.87058824, 1, 1)
+position = Vector2(1170, 540.00006)
+scale = Vector2(36.5625, 16.875002)
+texture = SubResource("DrawableTexture2D_ewgvm")
+
+[node name="Node" type="Node" parent="." unique_id=1496331750]
+
+[node name="Title" type="RichTextLabel" parent="Node" unique_id=421871386]
+anchors_preset = -1
+anchor_left = 0.1448718
+anchor_top = 0.07962963
+anchor_right = 0.84572655
+anchor_bottom = 0.4388889
+offset_right = -0.00012207031
+grow_horizontal = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/default_color = Color(0.26784286, 6.016344e-09, 0.13132933, 1)
+theme_override_font_sizes/normal_font_size = 92
+text = "Reincarnated in another world as a victim"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Start" type="Button" parent="Node" unique_id=656052359]
+anchors_preset = -1
+anchor_left = 0.39957264
+anchor_top = 0.5037037
+anchor_right = 0.5679487
+anchor_bottom = 0.61296296
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 69
+text = "START"
+
+[node name="Credits" type="Button" parent="Node" unique_id=30644479]
+anchors_preset = -1
+anchor_left = 0.3991453
+anchor_top = 0.6351852
+anchor_right = 0.5675214
+anchor_bottom = 0.74444443
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 69
+text = "CREDITS"
+
+[node name="Exit" type="Button" parent="Node" unique_id=1313787460]
+anchors_preset = -1
+anchor_left = 0.39871794
+anchor_top = 0.76666665
+anchor_right = 0.567094
+anchor_bottom = 0.8759259
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 69
+text = "EXIT"
+
+[connection signal="pressed" from="Node/Start" to="LocalSceneManager" method="_on_start_pressed"]
+[connection signal="pressed" from="Node/Credits" to="LocalSceneManager" method="_on_credits_pressed"]
+[connection signal="pressed" from="Node/Exit" to="LocalSceneManager" method="_on_exit_pressed"]

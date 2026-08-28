@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://cayrmuhq31m7s"]
+
+[ext_resource type="Script" uid="uid://t1ygi7v1epps" path="res://Personagens/personagem.gd" id="1_4wglj"]
+[ext_resource type="Texture2D" uid="uid://4uys5dq83uom" path="res://icon.png" id="2_rg6vp"]
+[ext_resource type="Texture2D" uid="uid://bk75tk5bll33c" path="res://Sprites/OverBarPlaceholder.png" id="3_bu4fp"]
+[ext_resource type="Texture2D" uid="uid://dq7cnowfoebe3" path="res://Sprites/ProgressBarPlaceholder.png" id="4_vv7k6"]
+[ext_resource type="Script" uid="uid://bpd4k04fclty6" path="res://Personagens/barra_de_vida.gd" id="5_vv7k6"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7xlsb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_rg6vp")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Personagem" type="Node2D" unique_id=1534450694]
+script = ExtResource("1_4wglj")
+
+[node name="Animação Personagem" type="AnimatedSprite2D" parent="." unique_id=1097771718]
+sprite_frames = SubResource("SpriteFrames_7xlsb")
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=504161952]
+
+[node name="Barra de Vida" type="TextureProgressBar" parent="." unique_id=608620145]
+visible = false
+anchors_preset = -1
+anchor_left = 0.521
+anchor_top = 0.49100003
+anchor_right = 0.521
+anchor_bottom = 0.49100003
+offset_left = -68.0
+offset_top = -74.0
+offset_right = 390.0
+offset_bottom = -9.0
+scale = Vector2(0.3, 0.3)
+size_flags_horizontal = 4
+size_flags_vertical = 0
+value = 100.0
+texture_under = ExtResource("3_bu4fp")
+texture_progress = ExtResource("4_vv7k6")
+script = ExtResource("5_vv7k6")
+metadata/_edit_use_anchors_ = true
+
+[connection signal="vida_modificou" from="." to="Barra de Vida" method="_on_personagem_vida_modificou"]
