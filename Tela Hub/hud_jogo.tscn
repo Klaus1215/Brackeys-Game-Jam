@@ -1,59 +1,125 @@
 [gd_scene format=3 uid="uid://o6od2wjndy5g"]
 
 [ext_resource type="Script" uid="uid://7jdnwt0e0j" path="res://Tela Hub/hud_jogo.gd" id="1_tdsj0"]
+[ext_resource type="Script" uid="uid://b643d4yua0ad0" path="res://Tela Hub/dialogue.gd" id="2_wrmsx"]
+[ext_resource type="Texture2D" uid="uid://d2kphho5pstyd" path="res://Tela Hub/dialogue_backgroung.png" id="3_1yhm6"]
+[ext_resource type="AudioStream" uid="uid://bgu4tvr1gcl85" path="res://Tela Hub/blop2.wav" id="4_1yhm6"]
 
 [node name="HUD_Jogo" type="Control" unique_id=1302963485]
 layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -324.0
+offset_right = 576.0
+offset_bottom = 324.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tdsj0")
+
+[node name="hud" type="MarginContainer" parent="." unique_id=2056154582]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_tdsj0")
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_right = 24
 
-[node name="Conatiner Dias" type="PanelContainer" parent="." unique_id=2054105956]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.5
-anchor_top = 0.485
-anchor_right = 0.5
-anchor_bottom = 0.485
-offset_left = 15.0
-offset_top = -314.28
-offset_right = 575.0
-offset_bottom = -207.28
+[node name="Conatiner Dias" type="PanelContainer" parent="hud" unique_id=2054105956]
+layout_mode = 2
+size_flags_vertical = 0
 
-[node name="Label Dias" type="Label" parent="Conatiner Dias" unique_id=1096602646]
+[node name="Label Dias" type="Label" parent="hud/Conatiner Dias" unique_id=1096602646]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "Dia 0 - Manhã"
 
-[node name="Summon" type="Button" parent="." unique_id=12526599]
-layout_mode = 0
-offset_left = 736.0
-offset_top = 316.0
-offset_right = 1127.0
-offset_bottom = 416.0
-theme_override_font_sizes/font_size = 40
-text = "Sumonar"
+[node name="VBoxContainer" type="VBoxContainer" parent="hud" unique_id=1216516781]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+theme_override_constants/separation = 60
 
-[node name="Lutar" type="Button" parent="." unique_id=2100512929]
-layout_mode = 0
-offset_left = 736.0
-offset_top = 426.0
-offset_right = 1127.0
-offset_bottom = 526.0
+[node name="Lutar" type="Button" parent="hud/VBoxContainer" unique_id=2100512929]
+layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "Lutar"
 
-[node name="Button" type="Button" parent="." unique_id=193536195]
-layout_mode = 0
-offset_left = 735.0
-offset_top = 536.0
-offset_right = 1126.0
-offset_bottom = 636.0
+[node name="Summon" type="Button" parent="hud/VBoxContainer" unique_id=12526599]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Sumonar"
+
+[node name="Button" type="Button" parent="hud/VBoxContainer" unique_id=193536195]
+layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "Terminar dia"
 
-[connection signal="pressed" from="Summon" to="." method="_on_summon_pressed"]
-[connection signal="pressed" from="Lutar" to="." method="_on_lutar_pressed"]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=559579066]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_right = 24
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer" unique_id=1555096539]
+layout_mode = 2
+
+[node name="Dialogue" type="PanelContainer" parent="MarginContainer/PanelContainer" unique_id=477070701]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+size_flags_vertical = 8
+script = ExtResource("2_wrmsx")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer/PanelContainer/Dialogue" unique_id=325320809]
+layout_mode = 2
+texture = ExtResource("3_1yhm6")
+region_rect = Rect2(0, 0, 12, 12)
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/Dialogue/NinePatchRect" unique_id=829613716]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="Content" type="RichTextLabel" parent="MarginContainer/PanelContainer/Dialogue/NinePatchRect/MarginContainer" unique_id=516154319]
+layout_mode = 2
+theme_override_colors/default_color = Color(0.19, 0.1425, 0.1425, 1)
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 24
+theme_override_font_sizes/bold_italics_font_size = 24
+theme_override_font_sizes/italics_font_size = 24
+theme_override_font_sizes/mono_font_size = 24
+bbcode_enabled = true
+text = "Aroooooooooooooooo"
+
+[node name="TypeTimer" type="Timer" parent="MarginContainer/PanelContainer/Dialogue" unique_id=1472594503]
+wait_time = 0.04
+
+[node name="PauseTimer" type="Timer" parent="MarginContainer/PanelContainer/Dialogue" unique_id=361773645]
+wait_time = 0.04
+
+[node name="DialogueVoicePlayer" type="AudioStreamPlayer" parent="MarginContainer/PanelContainer/Dialogue" unique_id=1964135425]
+stream = ExtResource("4_1yhm6")
+
+[connection signal="pressed" from="hud/VBoxContainer/Lutar" to="." method="_on_lutar_pressed"]
+[connection signal="pressed" from="hud/VBoxContainer/Summon" to="." method="_on_summon_pressed"]
