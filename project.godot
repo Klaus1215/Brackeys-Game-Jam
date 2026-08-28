@@ -25,6 +25,11 @@ EstadoDoJogo="*uid://c3kivgk1dwypm"
 TransistorDeCena="*uid://c6vfs2fs7hxlc"
 Party="*uid://c5tl8ctg0tmwj"
 
+[display]
+
+window/size/viewport_width=2340
+window/size/viewport_height=1080
+
 [dotnet]
 
 project/assembly_name="Brackeys- Game- Jam"
