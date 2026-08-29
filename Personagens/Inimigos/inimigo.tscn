@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://6ed8klikufbe"]
+
+[ext_resource type="PackedScene" uid="uid://cayrmuhq31m7s" path="res://Personagens/personagem.tscn" id="1_eesud"]
+[ext_resource type="Script" uid="uid://dsdhyd6x28ymh" path="res://Personagens/Inimigos/inimigo.gd" id="2_qulja"]
+
+[node name="Inimigo" unique_id=1534450694 instance=ExtResource("1_eesud")]
+script = ExtResource("2_qulja")

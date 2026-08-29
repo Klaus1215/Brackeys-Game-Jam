@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://cfnem5jh30lt"]
+
+[ext_resource type="PackedScene" uid="uid://cayrmuhq31m7s" path="res://Personagens/personagem.tscn" id="1_5oys2"]
+[ext_resource type="Script" uid="uid://cxoedoetav22r" path="res://Personagens/Jogador/jogador.gd" id="2_qkpl7"]
+
+[node name="Jogador" unique_id=1534450694 instance=ExtResource("1_5oys2")]
+script = ExtResource("2_qkpl7")
