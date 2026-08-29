@@ -2,23 +2,17 @@
 
 [ext_resource type="Script" uid="uid://ca3u3qor2bcg3" path="res://Tela de Combate/tela_de_combate.gd" id="1_p3a4r"]
 [ext_resource type="Script" uid="uid://b67fh74ixte3k" path="res://Tela de Combate/Spawn de Inimigos/inimigos_spawn.gd" id="2_5map3"]
+[ext_resource type="Script" uid="uid://cmeas31o5jceo" path="res://Tela de Combate/Spawn da Party/spawn_party.gd" id="2_qbd3a"]
 
 [node name="Tela de Combate" type="Node" unique_id=598384138]
 script = ExtResource("1_p3a4r")
 
 [node name="Party" type="Node2D" parent="." unique_id=1683803422]
-position = Vector2(280, 299)
+position = Vector2(149, 303)
+script = ExtResource("2_qbd3a")
 
 [node name="Inimigos" type="Node2D" parent="." unique_id=1347845053]
 position = Vector2(981, 298)
 script = ExtResource("2_5map3")
 
-[node name="Interface do Comabte" type="CanvasLayer" parent="." unique_id=1451573465]
-
-[node name="Button" type="Button" parent="Interface do Comabte" unique_id=1818313691]
-offset_left = 367.0
-offset_top = 543.0
-offset_right = 789.0
-offset_bottom = 612.0
-theme_override_font_sizes/font_size = 40
-text = "Atacar"
+[node name="Interface do Combate" type="CanvasLayer" parent="." unique_id=1451573465]

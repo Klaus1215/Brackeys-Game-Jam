@@ -45,4 +45,9 @@ texture_progress = ExtResource("4_vv7k6")
 script = ExtResource("5_vv7k6")
 metadata/_edit_use_anchors_ = true
 
+[node name="Timer do Ataque" type="Timer" parent="." unique_id=1801708296]
+process_mode = 1
+autostart = true
+
 [connection signal="vida_modificou" from="." to="Barra de Vida" method="_on_personagem_vida_modificou"]
+[connection signal="timeout" from="Timer do Ataque" to="." method="_on_timer_do_ataque_timeout"]
