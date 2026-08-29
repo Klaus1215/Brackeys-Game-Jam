@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://comv0i380t22s"]
+
+[ext_resource type="Script" uid="uid://b643d4yua0ad0" path="res://Tela Hub/dialogue.gd" id="1_r8tyu"]
+[ext_resource type="Texture2D" uid="uid://d2kphho5pstyd" path="res://Tela Hub/dialogue_backgroung.png" id="2_tk44a"]
+[ext_resource type="AudioStream" uid="uid://bgu4tvr1gcl85" path="res://Tela Hub/blop2.wav" id="3_gm1ih"]
+
+[node name="DialogueScene" type="Control" unique_id=1682305032]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=2046254671]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_right = 24
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer" unique_id=237572049]
+layout_mode = 2
+
+[node name="Dialogue" type="PanelContainer" parent="MarginContainer/PanelContainer" unique_id=855269709]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+size_flags_vertical = 8
+script = ExtResource("1_r8tyu")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer/PanelContainer/Dialogue" unique_id=2018923928]
+layout_mode = 2
+texture = ExtResource("2_tk44a")
+region_rect = Rect2(0, 0, 12, 12)
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/Dialogue/NinePatchRect" unique_id=1018155109]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="Content" type="RichTextLabel" parent="MarginContainer/PanelContainer/Dialogue/NinePatchRect/MarginContainer" unique_id=56958287]
+layout_mode = 2
+theme_override_colors/default_color = Color(0.19, 0.1425, 0.1425, 1)
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 24
+theme_override_font_sizes/bold_italics_font_size = 24
+theme_override_font_sizes/italics_font_size = 24
+theme_override_font_sizes/mono_font_size = 24
+bbcode_enabled = true
+text = "Aroooooooooooooooo"
+
+[node name="TypeTimer" type="Timer" parent="MarginContainer/PanelContainer/Dialogue" unique_id=904330418]
+wait_time = 0.04
+
+[node name="PauseTimer" type="Timer" parent="MarginContainer/PanelContainer/Dialogue" unique_id=986041723]
+wait_time = 0.04
+
+[node name="DialogueVoicePlayer" type="AudioStreamPlayer" parent="MarginContainer/PanelContainer/Dialogue" unique_id=485663172]
+stream = ExtResource("3_gm1ih")
