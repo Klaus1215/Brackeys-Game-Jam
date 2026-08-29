@@ -32,11 +32,6 @@ grow_vertical = 2
 theme_override_constants/margin_left = 24
 theme_override_constants/margin_right = 24
 
-<<<<<<< HEAD
-[node name="Conatiner Dias" type="PanelContainer" parent="hud" unique_id=2054105956]
-layout_mode = 2
-size_flags_vertical = 0
-=======
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1036457639]
 modulate = Color(0.9968409, 0.78881043, 1, 1)
 position = Vector2(1170, 540)
@@ -53,7 +48,6 @@ offset_top = 37.0
 offset_right = -78.0
 offset_bottom = 144.0
 grow_horizontal = 0
->>>>>>> a35b03f44c6b04f8b911dccee2b6f8619ccf1ffd
 
 [node name="Label Dias" type="Label" parent="hud/Conatiner Dias" unique_id=1096602646]
 layout_mode = 2
@@ -61,17 +55,6 @@ theme_override_font_sizes/font_size = 50
 text = "Dia 0 - Manhã"
 horizontal_alignment = 1
 
-<<<<<<< HEAD
-[node name="VBoxContainer" type="VBoxContainer" parent="hud" unique_id=1216516781]
-custom_minimum_size = Vector2(400, 0)
-layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 4
-theme_override_constants/separation = 60
-
-[node name="Lutar" type="Button" parent="hud/VBoxContainer" unique_id=2100512929]
-layout_mode = 2
-=======
 [node name="Summon" type="Button" parent="." unique_id=12526599]
 layout_mode = 1
 anchors_preset = 3
@@ -101,19 +84,9 @@ offset_right = -91.6001
 offset_bottom = -232.0
 grow_horizontal = 0
 grow_vertical = 0
->>>>>>> a35b03f44c6b04f8b911dccee2b6f8619ccf1ffd
 theme_override_font_sizes/font_size = 40
 text = "Interact"
 
-<<<<<<< HEAD
-[node name="Summon" type="Button" parent="hud/VBoxContainer" unique_id=12526599]
-layout_mode = 2
-theme_override_font_sizes/font_size = 40
-text = "Sumonar"
-
-[node name="Button" type="Button" parent="hud/VBoxContainer" unique_id=193536195]
-layout_mode = 2
-=======
 [node name="Button" type="Button" parent="." unique_id=193536195]
 layout_mode = 1
 anchors_preset = 3
@@ -127,7 +100,6 @@ offset_right = -91.59961
 offset_bottom = -84.0
 grow_horizontal = 0
 grow_vertical = 0
->>>>>>> a35b03f44c6b04f8b911dccee2b6f8619ccf1ffd
 theme_override_font_sizes/font_size = 40
 text = "End Day"
 
