@@ -1,16 +1,9 @@
 extends Control
 
 func _on_summon_pressed() -> void:
-	var Joaquina: Dictionary = {
-		"id_personagem": ResourceUID.id_to_text(ResourceUID.create_id()),
-		"vida": 100,
-		"ataque_base": 200,
-		"timer_ataque": 1,
-		"afeto": 20,
-		"tipo" : preload("res://Personagens/Companheiros/companheiro.tscn")
-	}
+	var companheiro = CharacterGenerator.criar_companheiro()
 	
-	Party.add_personagem(Joaquina)
+	Party.add_personagem(companheiro)
 	Party.print_party()
 
 func _on_lutar_pressed() -> void:

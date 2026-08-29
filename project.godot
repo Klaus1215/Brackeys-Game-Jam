@@ -24,6 +24,7 @@ config/icon="res://icon.png"
 EstadoDoJogo="*uid://c3kivgk1dwypm"
 TransistorDeCena="*uid://c6vfs2fs7hxlc"
 Party="*uid://c5tl8ctg0tmwj"
+CharacterGenerator="*uid://y0lulj0iejx3"
 
 [display]
 
