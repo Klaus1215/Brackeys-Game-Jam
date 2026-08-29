@@ -15,4 +15,4 @@ script = ExtResource("2_qbd3a")
 position = Vector2(981, 298)
 script = ExtResource("2_5map3")
 
-[node name="Interface do Comabte" type="CanvasLayer" parent="." unique_id=1451573465]
+[node name="Interface do Combate" type="CanvasLayer" parent="." unique_id=1451573465]

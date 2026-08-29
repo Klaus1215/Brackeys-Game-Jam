@@ -22,7 +22,8 @@ func _ready() -> void:
 
 # Ataque básico que inimigos e companheiros podem fazer
 func ataque_básico(Alvo : Personagem) -> void:
-	Alvo.tomar_dano(stats.ataque_base)
+	if(Alvo != null):
+		Alvo.tomar_dano(stats.ataque_base)
 	
 func tomar_dano(dano : int) -> void:
 	stats.vida_atual -= dano

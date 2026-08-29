@@ -4,8 +4,14 @@ extends Node
 
 var espaco_party : Node2D
 var espaco_inimigos : Node2D
+var hud_combate : CanvasLayer
+
+var inimigos_no_combate : Array
 
 func _ready() -> void:
+	# Referencia ao HUD da tela de combate
+	hud_combate = get_node("Interface do Combate")
+	
 	# Por meio do estado do jogador, renderizará ele
 	var jogador_instanciado = EstadoDoJogo.instanciar_jogador()
 	
@@ -23,3 +29,10 @@ func _ready() -> void:
 	
 	if(espaco_inimigos):
 		espaco_inimigos.spawn_teste()
+		
+func _process(float) -> void:
+	inimigos_no_combate = espaco_inimigos.get_children()
+	if(inimigos_no_combate.is_empty()):
+		get_tree().paused = true
+		var arq_tela_vitoria = preload("res://Tela de Combate/tela_vitoria.tscn")
+		hud_combate.add_child(arq_tela_vitoria.instantiate())

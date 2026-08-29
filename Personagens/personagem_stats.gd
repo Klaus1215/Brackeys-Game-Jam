@@ -19,5 +19,6 @@ func _init(id: String, vida_total_: int = 100, ataque_base_: float = 10, timer_a
 	vida_atual = vida_total_
 	ataque_base = ataque_base_
 	timer_ataque = timer_ataque_
+	afeto = afeto_
 	
 	

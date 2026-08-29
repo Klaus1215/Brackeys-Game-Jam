@@ -6,18 +6,14 @@ var chance_ataque_inimigo : float
 var chance_nao_ataque : float
 var chance_ataque_jogador : float
 
-
+# Método para quando for a vez do companheiro
 func _on_timer_do_ataque_timeout() -> void:
 	var inimigos_no_combate = get_node_or_null("../../Inimigos").get_children()
 	var jogador = get_node_or_null("../../Jogador")
 	
-	if(inimigos_no_combate.is_empty()):
-		print("Parou")
-		get_tree().paused = true
-	
 	if(stats.afeto > 0):
 		chance_ataque_inimigo = stats.afeto * 0.1
-		chance_nao_ataque = stats.afeto * 0.15
+		chance_nao_ataque = stats.afeto/2 * 0.2
 		chance_ataque_jogador = 1.0
 	else:
 		chance_ataque_inimigo = 1.0
@@ -28,6 +24,10 @@ func _on_timer_do_ataque_timeout() -> void:
 	
 	var acao_tomada = randi() % int(total_chance)
 	
+	if(inimigos_no_combate.is_empty()):
+		timer.timeout.disconnect(_on_timer_do_ataque_timeout)
+		return
+		
 	if(acao_tomada < chance_ataque_inimigo):
 		ataque_básico(inimigos_no_combate.pick_random())
 	elif(acao_tomada < chance_ataque_jogador):
