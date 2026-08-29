@@ -15,7 +15,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="Brackeys- Game- Jam"
-run/main_scene="res://Tela Hub/hud_jogo.tscn"
+run/main_scene="uid://drv5guf51m4tg"
 config/features=PackedStringArray("4.7")
 config/icon="res://icon.png"
 
@@ -24,6 +24,11 @@ config/icon="res://icon.png"
 EstadoDoJogo="*uid://c3kivgk1dwypm"
 TransistorDeCena="*uid://c6vfs2fs7hxlc"
 Party="*uid://c5tl8ctg0tmwj"
+
+[display]
+
+window/size/viewport_width=2340
+window/size/viewport_height=1080
 
 [dotnet]
 
@@ -39,5 +44,5 @@ common/enable_pause_aware_picking=true
 
 [rendering]
 
-textures/canvas_textures/default_texture_filter=0
+textures/vram_compression/import_etc2_astc=true
 environment/defaults/default_environment="res://default_env.tres"
