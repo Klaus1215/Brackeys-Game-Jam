@@ -1,5 +1,13 @@
 extends Control
 
+var especificacoes_dia : Label
+
+func _ready() -> void:
+	especificacoes_dia = get_node("Container Dias/Label Dias") as Label
+	var informacoes_dia = EstadoDoJogo.get_tempo()
+	
+	especificacoes_dia.text = "Day " + str(informacoes_dia[0]) + " - " + str(informacoes_dia[1])
+
 func _on_summon_pressed() -> void:
 	var Joaquina: Dictionary = {
 		"id_personagem": ResourceUID.id_to_text(ResourceUID.create_id()),

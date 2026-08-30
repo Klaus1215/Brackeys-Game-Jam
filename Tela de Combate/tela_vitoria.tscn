@@ -1,12 +1,16 @@
 [gd_scene format=3 uid="uid://cvpn65itwqbin"]
 
+[ext_resource type="Script" uid="uid://eafp3kqm6tev" path="res://Tela de Combate/tela_vitoria.gd" id="1_4g1cf"]
+
 [node name="Tela Vitoria" type="Control" unique_id=1772843971]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_4g1cf")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1336204695]
 custom_minimum_size = Vector2(0, 400)
@@ -31,8 +35,10 @@ theme_override_font_sizes/font_size = 40
 text = "You win!!!"
 horizontal_alignment = 1
 
-[node name="Button" type="Button" parent="VBoxContainer" unique_id=615633255]
+[node name="Voltar Hub" type="Button" parent="VBoxContainer" unique_id=615633255]
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "Return to the base"
+
+[connection signal="button_up" from="VBoxContainer/Voltar Hub" to="." method="_on_voltar_hub_button_up"]

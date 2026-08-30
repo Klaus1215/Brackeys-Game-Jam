@@ -31,15 +31,20 @@ func _ready() -> void:
 	
 	if(espaco_inimigos):
 		espaco_inimigos.spawn_teste()
-		
+
+# Método para quando o jogador vence
+func jogador_venceu():
+	get_tree().paused = true
+	EstadoDoJogo.passar_um_tempo()
+	var arq_tela_vitoria = preload("res://Tela de Combate/tela_vitoria.tscn")
+	hud_combate.add_child(arq_tela_vitoria.instantiate())
+
 func _process(delta: float) -> void:
 	process_priority = -100
 	inimigos_no_combate = espaco_inimigos.get_children()
 	
 	if(inimigos_no_combate.is_empty()):
-		get_tree().paused = true
-		var arq_tela_vitoria = preload("res://Tela de Combate/tela_vitoria.tscn")
-		hud_combate.add_child(arq_tela_vitoria.instantiate())
+		jogador_venceu()
 		
 	# print("Alguem esta atacando? %s" % alguem_atacando)
 		

@@ -17,6 +17,8 @@ var timer : Timer
 signal vida_modificou
 signal colidiu_com
 signal voltou_origem
+signal pode_atacar
+signal finalizou_vez
 
 func _ready() -> void:
 	ponto_parado = global_position
@@ -28,15 +30,14 @@ func _ready() -> void:
 	
 	if (self is Companheiro || self is Inimigo):
 		controlador_combate = get_parent().get_parent()
-	else:
-		controlador_combate = get_parent()
+		
 	
 	if (self is Jogador || self is Inimigo):
 		var barra_vida = get_node("Barra de Vida")
 		barra_vida.visible = true
 	
 func ativar_colisao(personagem_alvo : Personagem = null) -> void:
-	print("Ativou colisão")
+	# print("Ativou colisão")
 	var colisao_personagem = get_node("Colisão Personagem")
 	colisao_personagem.disabled = !colisao_personagem.disabled
 	
@@ -62,13 +63,14 @@ func mover(ponto_de_ida: Vector2 = ponto_alvo) -> void:
 		emit_signal("voltou_origem")
 
 # Ataque básico que inimigos e companheiros podem fazer
-func ataque_básico(Alvo : Personagem) -> void:
+func ataque_básico(Alvo : Personagem, multi : int = 1) -> void:
 	if(Alvo != null):
 		ativar_colisao(Alvo)
 		mover(Alvo.global_position)
 		await colidiu_com
 		
-		Alvo.tomar_dano(stats.ataque_base)
+		estado = EstadoPersonagem.ATACANDO
+		await Alvo.tomar_dano(stats.ataque_base * multi)
 		mover(ponto_parado)
 		await voltou_origem
 		global_position = ponto_parado
@@ -98,9 +100,9 @@ func _physics_process(delta: float) -> void:
 
 func _on_timer_do_ataque_timeout() -> bool:
 	
+	print("Alguém está atacando? ", controlador_combate.alguem_atacando)
 	if(controlador_combate.alguem_atacando):
 		# print(name + " não pode atacar")
-		print(controlador_combate.alguem_atacando)
 		return false
 	
 	controlador_combate.alguem_atacando = true

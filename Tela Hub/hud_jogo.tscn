@@ -11,7 +11,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_tdsj0")
 
-[node name="Conatiner Dias" type="PanelContainer" parent="." unique_id=2054105956]
+[node name="Container Dias" type="PanelContainer" parent="." unique_id=2054105956]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
@@ -23,7 +23,7 @@ offset_top = -314.28
 offset_right = 575.0
 offset_bottom = -207.28
 
-[node name="Label Dias" type="Label" parent="Conatiner Dias" unique_id=1096602646]
+[node name="Label Dias" type="Label" parent="Container Dias" unique_id=1096602646]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "Dia 0 - Manhã"

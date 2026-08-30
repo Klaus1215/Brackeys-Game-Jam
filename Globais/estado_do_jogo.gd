@@ -3,10 +3,10 @@ extends Node
 const DIA_INICIAL := 0
 const VIDA_INICIAL := 100
 
-enum Horarios {Manhã, Tarde, Noite}
+enum Horarios {Morning, Afternoon, Night}
 
 var dia : int = DIA_INICIAL
-var momento_dia: Horarios = Horarios.Manhã
+var momento_dia: Horarios = Horarios.Morning
 
 # Dicionario que guardará o estado do jogo
 var JogadorStats: Dictionary = {
@@ -16,9 +16,19 @@ var JogadorStats: Dictionary = {
 	"tipo" : preload("res://Personagens/Jogador/jogador.tscn")
 }
 
+func get_tempo():
+	return [dia,  Horarios.keys()[momento_dia]] 
+
+func passar_um_tempo():
+	if (momento_dia == 3):
+		dia += 1
+		momento_dia = 1
+	else:
+		momento_dia += 1
+
 func resetar_jogo() -> void:
 	dia = DIA_INICIAL
-	momento_dia = Horarios.Manhã
+	momento_dia = Horarios.Morning
 	JogadorStats["vida"] = VIDA_INICIAL
 
 func instanciar_jogador() -> Personagem:

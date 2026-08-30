@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://dtg44xl4oxiaj"]
 
-[ext_resource type="Texture2D" uid="uid://4uys5dq83uom" path="res://icon.png" id="1_qf3pf"]
 [ext_resource type="Script" uid="uid://dwy4t5h7c4m5b" path="res://Personagens/Jogador/barra_de_ataque.gd" id="1_x58ql"]
+[ext_resource type="Texture2D" uid="uid://cts2jjnndpag1" path="res://Sprites/AttackBar.png" id="2_0jgsa"]
+[ext_resource type="Texture2D" uid="uid://036ygjlf1a62" path="res://Sprites/AlvoBar.png" id="3_0jgsa"]
 
 [sub_resource type="Curve2D" id="Curve2D_x58ql"]
 _data = {
@@ -12,7 +13,11 @@ point_count = 4
 [node name="Barra de Ataque" type="Node2D" unique_id=813770693]
 position = Vector2(-2, 0)
 script = ExtResource("1_x58ql")
-metadata/_edit_group_ = true
+
+[node name="Background" type="Sprite2D" parent="." unique_id=2048448256]
+position = Vector2(49.999992, 9.999998)
+scale = Vector2(0.7619047, 0.42567566)
+texture = ExtResource("2_0jgsa")
 
 [node name="Rota do Alvo" type="Path2D" parent="." unique_id=736253728]
 curve = SubResource("Curve2D_x58ql")
@@ -22,6 +27,5 @@ position = Vector2(-250, 0)
 rotates = false
 
 [node name="Alvo" type="Sprite2D" parent="Rota do Alvo/Caminho do Alvo" unique_id=1029057822]
-texture = ExtResource("1_qf3pf")
-
-[node name="Background" type="Sprite2D" parent="." unique_id=2048448256]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("3_0jgsa")
