@@ -6,8 +6,16 @@ var chance_ataque_inimigo : float
 var chance_nao_ataque : float
 var chance_ataque_jogador : float
 
+func calcular_chance_ataque() -> void:
+	return
+
 # Método para quando for a vez do companheiro
-func _on_timer_do_ataque_timeout() -> void:
+func _on_timer_do_ataque_timeout() -> bool:
+	var continuar = super()
+	
+	if(continuar == false):
+		return false
+	
 	var inimigos_no_combate = get_node_or_null("../../Inimigos").get_children()
 	var jogador = get_node_or_null("../../Jogador")
 	
@@ -26,14 +34,18 @@ func _on_timer_do_ataque_timeout() -> void:
 	
 	if(inimigos_no_combate.is_empty()):
 		timer.timeout.disconnect(_on_timer_do_ataque_timeout)
-		return
+		return false
 		
 	if(acao_tomada < chance_ataque_inimigo):
-		ataque_básico(inimigos_no_combate.pick_random())
+		await ataque_básico(inimigos_no_combate.pick_random())
 	elif(acao_tomada < chance_ataque_jogador):
-		ataque_básico(jogador)	
+		await ataque_básico(jogador)	
 	else:
-		print(self.name + "está muito ocupada vendo as borboletas")
+		print(name + " está muito ocupada vendo as borboletas")
+		
+	controlador_combate.alguem_atacando = false
+	# print(name + " já atacou")
+	return true
 
 func morrer() -> void:
 	super()

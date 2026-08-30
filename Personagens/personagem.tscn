@@ -17,7 +17,10 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Personagem" type="Node2D" unique_id=1534450694]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x58ql"]
+size = Vector2(101, 97)
+
+[node name="Personagem" type="CharacterBody2D" unique_id=1996241334]
 script = ExtResource("1_4wglj")
 
 [node name="Animação Personagem" type="AnimatedSprite2D" parent="." unique_id=1097771718]
@@ -48,6 +51,11 @@ metadata/_edit_use_anchors_ = true
 [node name="Timer do Ataque" type="Timer" parent="." unique_id=1801708296]
 process_mode = 1
 autostart = true
+
+[node name="Colisão Personagem" type="CollisionShape2D" parent="." unique_id=1170320754]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_x58ql")
+disabled = true
 
 [connection signal="vida_modificou" from="." to="Barra de Vida" method="_on_personagem_vida_modificou"]
 [connection signal="timeout" from="Timer do Ataque" to="." method="_on_timer_do_ataque_timeout"]

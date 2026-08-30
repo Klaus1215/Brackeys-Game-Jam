@@ -12,7 +12,7 @@ extends Resource
 # Atributos únicos dos companheiros
 @export var afeto : float
 
-func _init(id: String, vida_total_: int = 100, ataque_base_: float = 10, timer_ataque_: float = 1.0, 
+func _init(id: String, vida_total_: int = 100, ataque_base_: float = 10.0, timer_ataque_: float = 1.0, 
 		  afeto_: int = -100) -> void:
 	id_personagem = id
 	vida_total = vida_total_

@@ -35,7 +35,7 @@ offset_top = 316.0
 offset_right = 1127.0
 offset_bottom = 416.0
 theme_override_font_sizes/font_size = 40
-text = "Sumonar"
+text = "Summon"
 
 [node name="Lutar" type="Button" parent="." unique_id=2100512929]
 layout_mode = 0
@@ -44,7 +44,7 @@ offset_top = 426.0
 offset_right = 1127.0
 offset_bottom = 526.0
 theme_override_font_sizes/font_size = 40
-text = "Lutar"
+text = "Go to Fight"
 
 [node name="Button" type="Button" parent="." unique_id=193536195]
 layout_mode = 0
@@ -53,7 +53,7 @@ offset_top = 536.0
 offset_right = 1126.0
 offset_bottom = 636.0
 theme_override_font_sizes/font_size = 40
-text = "Terminar dia"
+text = "Finish the Day"
 
 [connection signal="pressed" from="Summon" to="." method="_on_summon_pressed"]
 [connection signal="pressed" from="Lutar" to="." method="_on_lutar_pressed"]
