@@ -40,7 +40,6 @@ func jogador_venceu():
 	hud_combate.add_child(arq_tela_vitoria.instantiate())
 
 func _process(delta: float) -> void:
-	process_priority = -100
 	inimigos_no_combate = espaco_inimigos.get_children()
 	
 	if(inimigos_no_combate.is_empty()):

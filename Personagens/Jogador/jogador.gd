@@ -10,15 +10,6 @@ func _ready() -> void:
 	super._ready()
 	controlador_combate = get_parent()
 
-func _on_timer_do_ataque_timeout() -> bool:
-	var continuar = super()
-	
-	if(!continuar):
-		return false
-		
-	controlador_combate.alguem_atacando = false
-	return true
-
 func morrer() -> void:
 	super()
 	EstadoDoJogo.resetar_jogo()
@@ -28,7 +19,7 @@ func morrer() -> void:
 func _on_barra_de_ataque_mirou_na_barra(potencia: float) -> void:
 	var multi_barra = potencia * 10
 	
-	if(controlador_combate.alguem_atacando): # No momento
+	if(pode_atacar()): # No momento
 		multi_guardado = int(multi_barra)
 	else: # Ou depois
 		inimigos_no_combate = get_node_or_null("../Inimigos").get_children()
@@ -38,7 +29,7 @@ func _on_barra_de_ataque_mirou_na_barra(potencia: float) -> void:
 func _physics_process(delta: float) -> void:
 	super._physics_process(delta)
 	
-	if(controlador_combate.alguem_atacando == false && multi_guardado != 0):
+	if(pode_atacar() && multi_guardado != 0):
 		controlador_combate.alguem_atacando = true
 		
 		inimigos_no_combate = get_node_or_null("../Inimigos").get_children()

@@ -17,12 +17,13 @@ var JogadorStats: Dictionary = {
 }
 
 func get_tempo():
+	print(momento_dia)
 	return [dia,  Horarios.keys()[momento_dia]] 
 
 func passar_um_tempo():
-	if (momento_dia == 3):
+	if (momento_dia == 2):
 		dia += 1
-		momento_dia = 1
+		momento_dia = 0
 	else:
 		momento_dia += 1
 

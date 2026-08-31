@@ -17,7 +17,6 @@ var timer : Timer
 signal vida_modificou
 signal colidiu_com
 signal voltou_origem
-signal pode_atacar
 signal finalizou_vez
 
 func _ready() -> void:
@@ -35,7 +34,19 @@ func _ready() -> void:
 	if (self is Jogador || self is Inimigo):
 		var barra_vida = get_node("Barra de Vida")
 		barra_vida.visible = true
-	
+		
+
+func pode_atacar() -> bool:
+	# print("Alguém está atacando? ", controlador_combate.alguem_atacando)
+	if(controlador_combate.alguem_atacando):
+		# print(name + " não pode atacar")
+		return false
+	else:
+		controlador_combate.alguem_atacando = true
+		# print(name + " está atacando")
+		return true
+
+# Ativa o desativa a colisão de um Personagem	
 func ativar_colisao(personagem_alvo : Personagem = null) -> void:
 	# print("Ativou colisão")
 	var colisao_personagem = get_node("Colisão Personagem")
@@ -63,14 +74,14 @@ func mover(ponto_de_ida: Vector2 = ponto_alvo) -> void:
 		emit_signal("voltou_origem")
 
 # Ataque básico que inimigos e companheiros podem fazer
-func ataque_básico(Alvo : Personagem, multi : int = 1) -> void:
+func ataque_básico(Alvo : Personagem, multi : int = 1) -> bool:
 	if(Alvo != null):
 		ativar_colisao(Alvo)
 		mover(Alvo.global_position)
 		await colidiu_com
 		
 		estado = EstadoPersonagem.ATACANDO
-		await Alvo.tomar_dano(stats.ataque_base * multi)
+		Alvo.tomar_dano(stats.ataque_base * multi)
 		mover(ponto_parado)
 		await voltou_origem
 		global_position = ponto_parado
@@ -80,6 +91,11 @@ func ataque_básico(Alvo : Personagem, multi : int = 1) -> void:
 			ativar_colisao(Alvo)
 		else:
 			ativar_colisao()
+			
+		return true
+	else:
+		print("Não há alvo válido para o ataque")
+		return false
 	
 func tomar_dano(dano : int) -> void:
 	stats.vida_atual -= dano
@@ -97,14 +113,3 @@ func _physics_process(delta: float) -> void:
 	
 	if(stats.vida_atual <= 0):
 		morrer()
-
-func _on_timer_do_ataque_timeout() -> bool:
-	
-	print("Alguém está atacando? ", controlador_combate.alguem_atacando)
-	if(controlador_combate.alguem_atacando):
-		# print(name + " não pode atacar")
-		return false
-	
-	controlador_combate.alguem_atacando = true
-	# print(name + " está atacando")
-	return true
