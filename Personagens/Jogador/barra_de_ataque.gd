@@ -17,7 +17,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	
 	# Sempre que o jogador apertar enter a barra para e desfere o ataque
-	if(Input.is_action_just_pressed("ui_accept")):
+	if(Input.is_action_just_pressed("ui_accept") && estado_alvo != EstadosAlvo.EM_ATAQUE):
 		estado_alvo_anterior = estado_alvo
 		estado_alvo = EstadosAlvo.EM_ATAQUE
 		mirou_na_barra.emit(abs(0.5 - caminho_alvo.progress_ratio))
@@ -27,9 +27,9 @@ func _process(delta: float) -> void:
 	
 	match estado_alvo:
 		EstadosAlvo.TRAS:
-			caminho_alvo.progress_ratio -= 0.009
+			caminho_alvo.progress_ratio -= 0.02
 		EstadosAlvo.FRENTE:
-			caminho_alvo.progress_ratio += 0.009
+			caminho_alvo.progress_ratio += 0.02
 		EstadosAlvo.EM_ATAQUE:
 			return
 			
@@ -37,10 +37,9 @@ func _process(delta: float) -> void:
 		estado_alvo = EstadosAlvo.FRENTE
 	elif(ratio_barra == 1):
 		estado_alvo = EstadosAlvo.TRAS
-		
-
 
 func _on_jogador_finalizou_vez() -> void:
+	print("Enviou o sinal")
 	if(estado_alvo == EstadosAlvo.EM_ATAQUE):
 		estado_alvo = estado_alvo_anterior
 		

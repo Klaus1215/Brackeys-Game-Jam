@@ -57,5 +57,4 @@ position = Vector2(-0.5, -0.5)
 shape = SubResource("RectangleShape2D_x58ql")
 disabled = true
 
-[connection signal="vida_modificou" from="." to="Barra de Vida" method="_on_personagem_vida_modificou"]
 [connection signal="timeout" from="Timer do Ataque" to="." method="_on_timer_do_ataque_timeout"]

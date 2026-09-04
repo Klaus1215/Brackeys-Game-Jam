@@ -5,6 +5,7 @@ class_name Inimigo
 # Método para quando for a vez do inimigo
 func _on_timer_do_ataque_timeout() -> bool:
 	
+	var posso_atacar : bool = false
 	if(pode_atacar()):
 		var jogador = get_node_or_null("../../Jogador")
 		

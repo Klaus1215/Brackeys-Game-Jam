@@ -7,6 +7,7 @@ const VELOCIDADE : float = 800
 var stats : PersonagemStats
 var estado : EstadoPersonagem
 
+var posso_atacar : bool = false
 var ponto_parado : Vector2
 var ponto_alvo : Vector2
 var vida_anterior : int
@@ -39,11 +40,11 @@ func _ready() -> void:
 func pode_atacar() -> bool:
 	# print("Alguém está atacando? ", controlador_combate.alguem_atacando)
 	if(controlador_combate.alguem_atacando):
-		# print(name + " não pode atacar")
+		print(name + " não pode atacar")
 		return false
 	else:
 		controlador_combate.alguem_atacando = true
-		# print(name + " está atacando")
+		print(name + " está atacando")
 		return true
 
 # Ativa o desativa a colisão de um Personagem	

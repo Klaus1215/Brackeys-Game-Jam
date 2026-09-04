@@ -12,7 +12,7 @@ func _on_summon_pressed() -> void:
 	var Joaquina: Dictionary = {
 		"id_personagem": ResourceUID.id_to_text(ResourceUID.create_id()),
 		"vida": 100,
-		"ataque_base": 200,
+		"ataque_base": 10,
 		"timer_ataque": 1,
 		"afeto": 20,
 		"tipo" : preload("res://Personagens/Companheiros/companheiro.tscn")

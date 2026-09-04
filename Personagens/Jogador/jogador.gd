@@ -20,16 +20,17 @@ func _on_barra_de_ataque_mirou_na_barra(potencia: float) -> void:
 	var multi_barra = potencia * 10
 	
 	if(pode_atacar()): # No momento
-		multi_guardado = int(multi_barra)
-	else: # Ou depois
 		inimigos_no_combate = get_node_or_null("../Inimigos").get_children()
 		await ataque_básico(inimigos_no_combate[0], multi_barra)
 		controlador_combate.alguem_atacando = false
+		emit_signal("finalizou_vez")
+	else: # Ou depois
+		multi_guardado = int(multi_barra)
 
 func _physics_process(delta: float) -> void:
 	super._physics_process(delta)
 	
-	if(pode_atacar() && multi_guardado != 0):
+	if(controlador_combate.alguem_atacando == false && multi_guardado != 0):
 		controlador_combate.alguem_atacando = true
 		
 		inimigos_no_combate = get_node_or_null("../Inimigos").get_children()

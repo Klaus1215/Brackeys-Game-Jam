@@ -10,7 +10,7 @@ func spawn_teste() -> void:
 	for i in range(3):
 		var inimigo_instanc = inimigo_basico.instantiate()
 		inimigo_instanc.stats = PersonagemStats.new(ResourceUID.id_to_text(ResourceUID.create_id()), 
-		20, 10, 10)
+		20, 20, 2)
 		
 		inimigo_instanc.position.y = y_inimigo
 		print(inimigo_instanc.position)
